@@ -1,0 +1,41 @@
+# Ansible.
+*.retry
+
+# Binaries.
+*.jpg
+
+# Buffers.
+*~
+
+# Coverage.
+htmlcov
+.coverage
+cover
+
+# Coveralls.
+.coveralls.yml
+
+# Editors.
+.#.*
+#.*#
+
+# Galaxy.
+.galaxy_install_info
+
+# Python.
+*.egg-info
+*.pyc
+__pycache__
+.pytest_cache
+.tox
+
+# Sphinx.
+build
+
+# Tests generated files.
+tests/library
+tests/test_plugins
+.yamllint
+
+# Temporary.
+.cache

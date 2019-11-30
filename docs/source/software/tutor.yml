@@ -1,0 +1,57 @@
+Date: 30/11/2019
+
+Title: Tutor.
+
+Título: Tutor.
+
+URL: https://docs.tutor.overhang.io
+
+Description: Tutor is a docker-based Open edX distribution, both for production and local development. The goal of Tutor is to make it easy to deploy, customize, upgrade and scale Open edX.
+ 
+Descripción: Tutor es una distribución de Open edX basada en Docker, tanto para producción como para desarrollo local. La meta de Tutor es hacer fácil el despliegue, customización, actualización y escalamineto de Open edX.
+
+Installation:
+ - Development:
+  - sudo apt-get install docker docker-compose
+  - sudo vi /etc/hosts and add the lines:
+   - 127.0.1.1       pasitos.cedesdonbosco.ed.cr    pasitos
+   - 127.0.1.1       preview.pasitos.cedesdonbosco.ed.cr    pasitos
+   - 127.0.1.1       teachers.pasitos.cedesdonbosco.ed.cr    pasitos
+  - sudo curl -L "https://github.com/overhangio/tutor/releases/download/v3.8.0/tutor-$(uname -s)_$(uname -m)" -o /usr/local/bin/tutor
+  - sudo chmod 0755 /usr/local/bin/tutor
+  - tutor local quickstart
+  - Answer > Your website domain name for students (LMS) [www.myopenedx.com] - 
+pasitos.cedesdonbosco.ed.cr
+  - Answer > Your website domain name for teachers (CMS) [studio.pasitos.cedesdonbosco.ed.cr] - teachers.pasitos.cedesdonbosco.ed.cr
+  - Answer > Your platform name/title [My Open edX] - pasitos.
+  - Answer > Your public contact email address [contact@pasitos.cedesdonbosco.ed.cr] - pasitos@cedesdonbosco.ed.cr
+  - Answer > The default language code for the platform [en] - es-mx
+  - Answer > Activate SSL/TLS certificates for HTTPS access? Important note, this will NOT work in a development environment. [y/N] > - n
+ 
+Instalación:
+ - Desarrollo:
+  - sudo apt-get install docker docker-compose
+  - sudo vi /etc/hosts y agregar las líneas:
+   - 127.0.1.1       pasitos.cedesdonbosco.ed.cr    pasitos
+   - 127.0.1.1       preview.pasitos.cedesdonbosco.ed.cr    pasitos
+   - 127.0.1.1       teachers.pasitos.cedesdonbosco.ed.cr    pasitos
+  - sudo curl -L "https://github.com/overhangio/tutor/releases/download/v3.8.0/tutor-$(uname -s)_$(uname -m)" -o /usr/local/bin/tutor
+  - sudo chmod 0755 /usr/local/bin/tutor
+  - tutor local quickstart
+  - Responder > Your website domain name for students (LMS) [www.myopenedx.com] - 
+pasitos.cedesdonbosco.ed.cr
+  - Responder > Your website domain name for teachers (CMS) [studio.pasitos.cedesdonbosco.ed.cr] - teachers.pasitos.cedesdonbosco.ed.cr
+  - Responder > Your platform name/title [My Open edX] - pasitos.
+  - Responder > Your public contact email address [contact@pasitos.cedesdonbosco.ed.cr] - pasitos@cedesdonbosco.ed.cr
+  - Responder > The default language code for the platform [en] - es-mx
+  - Responder > Activate SSL/TLS certificates for HTTPS access? Important note, this will NOT work in a development environment. [y/N] > - n
+
+Configuration:
+
+Configuración:
+
+Commands:
+ - tutor 
+
+Comandos:
+ -
