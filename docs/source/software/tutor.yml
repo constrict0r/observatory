@@ -21,8 +21,7 @@ Installation:
   - sudo curl -L "https://github.com/overhangio/tutor/releases/download/v3.8.0/tutor-$(uname -s)_$(uname -m)" -o /usr/local/bin/tutor
   - sudo chmod 0755 /usr/local/bin/tutor
   - tutor local quickstart
-  - Answer > Your website domain name for students (LMS) [www.myopenedx.com] - 
-pasitos.cedesdonbosco.ed.cr
+  - Answer > Your website domain name for students (LMS) [www.myopenedx.com] - myopenedx.com
   - Answer > Your website domain name for teachers (CMS) [studio.myopenedx.com] - teachers.myopenedx.com
   - Answer > Your platform name/title [My Open edX] - My Open edX.
   - Answer > Your public contact email address [contact@myopenedx.com] - contact@myopenedx.com
@@ -41,10 +40,9 @@ Instalación:
   - sudo curl -L "https://github.com/overhangio/tutor/releases/download/v3.8.0/tutor-$(uname -s)_$(uname -m)" -o /usr/local/bin/tutor
   - sudo chmod 0755 /usr/local/bin/tutor
   - tutor local quickstart
-  - Responder > Your website domain name for students (LMS) [www.myopenedx.com] - 
-pasitos.cedesdonbosco.ed.cr
-  - Responder > Your website domain name for teachers (CMS) [studio.myopenedx.com] - teachers.pasitos.cedesdonbosco.ed.cr
-  - Responder > Your platform name/title [My Open edX] - pasitos.
+  - Responder > Your website domain name for students (LMS) [www.myopenedx.com] - myopenedx
+  - Responder > Your website domain name for teachers (CMS) [studio.myopenedx.com] - teachers.myopenedx.com
+  - Responder > Your platform name/title [My Open edX] - myopenex.
   - Responder > Your public contact email address [contact@myopenedx.com] - contact@myopenedx.com
   - Responder > The default language code for the platform [en] - es-mx
   - Responder > Activate SSL/TLS certificates for HTTPS access? Important note, this will NOT work in a development environment. [y/N] > - n
