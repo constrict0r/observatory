@@ -10,4 +10,4 @@ Descripción
 
 El Observatorio de Software del Malvado Villano.
 
-La intención es evaluar software para diferentes tareas.
+La intención es evaluar opciones de software para diferentes tareas.

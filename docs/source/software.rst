@@ -6,6 +6,11 @@ Open edX
 
 .. include:: software/open-edx.inc
 
+Swagger Editor
+.............................................................................
+
+.. include:: software/swagger-editor.inc
+
 Tutor
 .............................................................................
 

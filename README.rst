@@ -42,6 +42,7 @@ Contents
 * `Autor <#autor>`_
 * `Sotware <#Sotware>`_
    * `Open edX <#open-edx>`_
+   * `Swagger Editor <#swagger-editor>`_
    * `Tutor <#tutor>`_
 
 Description
@@ -57,7 +58,7 @@ Descripción
 
 El Observatorio de Software del Malvado Villano.
 
-La intención es evaluar software para diferentes tareas.
+La intención es evaluar opciones de software para diferentes tareas.
 
 
 License
@@ -128,6 +129,42 @@ múltiples universidades estadounidenses.
 Notes: See the “tutor” software for more details.
 
 Notas: Vea el software “tutor” para más detalles.
+
+
+Swagger Editor
+==============
+
+Date:  30/11/2019.
+
+Fecha: 30/11/2019.
+
+Title:  swagger-editor.
+
+Título: swagger-editor.
+
+URL: swagger.io/docs/open-source-tools/swagger-editor.
+
+Description: Openapi web editor.
+
+Descripción: Editor web para openapi.
+
+Installation:
+
+::
+
+   sudo apt install -y docker
+   docker pull swaggerapi/swagger-editor
+   docker run -p 80:8080 swaggerapi/swagger-editor
+   visit 127.0.0.1
+
+Instalación:
+
+::
+
+   sudo apt install -y docker
+   docker pull swaggerapi/swagger-editor
+   docker run -p 80:8080 swaggerapi/swagger-editor
+   visite 127.0.0.1
 
 
 Tutor
