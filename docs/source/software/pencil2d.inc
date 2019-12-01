@@ -17,6 +17,9 @@ Description: 2D drawing software that can be used for web sites wireframing.
 Descripción: Software de dibujo 2D que puede usarse para crear esquemas de
              sitios web.
 
+.. image:: https://gitlab.com/constrict0r/observatory/raw/master/img/pencil2d.png
+   :alt: pencil2d
+
 Installation:
 
 .. code-block:: bash

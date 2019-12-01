@@ -16,6 +16,9 @@ Description: Openapi web editor.
 
 Descripción: Editor web para openapi.
 
+.. image:: https://gitlab.com/constrict0r/observatory/raw/master/img/swagger-ditor.png
+   :alt: swagger-editor
+
 Installation:
 
 .. code-block:: bash

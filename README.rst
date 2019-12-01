@@ -111,7 +111,7 @@ Sotware
 Open edX
 ========
 
-voy aDate:  30/11/2019.
+Date:  30/11/2019.
 
 Fecha: 30/11/2019.
 
@@ -121,7 +121,7 @@ Título: Open edX.
 
 URL: open.edx.org.
 
-Category: e-learning.
+Category:  e-learning.
 
 Categoría: e-learning.
 
@@ -130,6 +130,9 @@ multiple USA universities.
 
 Descripción: Software para e-learning, una colaboración entre
 múltiples universidades estadounidenses.
+
+.. image:: https://gitlab.com//constrict0r///observatory//raw/master/img/open-edx.png
+   :alt: open-edx
 
 Notes: See the “tutor” software for more details.
 
@@ -159,6 +162,9 @@ wireframing.
 Descripción: Software de dibujo 2D que puede usarse para crear
 esquemas de
    sitios web.
+
+.. image:: https://gitlab.com//constrict0r///observatory//raw/master/img/pencil2d.png
+   :alt: pencil2d
 
 Installation:
 
@@ -214,6 +220,9 @@ Description: Openapi web editor.
 
 Descripción: Editor web para openapi.
 
+.. image:: https://gitlab.com//constrict0r///observatory//raw/master/img/swagger-editor.png
+   :alt: swagger-editor
+
 Installation:
 
 ::
@@ -244,7 +253,7 @@ Title: Tutor.
 
 Título: Tutor.
 
-URL: docs.tutor.overhang.io
+URL: `docs.tutor.overhang.io <https://docs.tutor.overhang.io>`_.
 
 Category: e-learning.
 

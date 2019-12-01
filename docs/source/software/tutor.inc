@@ -6,7 +6,7 @@ Title: Tutor.
 
 Título: Tutor.
 
-URL: docs.tutor.overhang.io
+URL: `docs.tutor.overhang.io <https://docs.tutor.overhang.io>`_.
 
 Category: e-learning.
 
