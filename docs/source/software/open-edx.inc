@@ -1,13 +1,15 @@
-Date: 30/11/2019
+Date:  30/11/2019.
 
-Title: Open edX.
+Fecha: 30/11/2019.
+
+Title:  Open edX.
 
 Título: Open edX.
 
-URL: https://open.edx.org
+URL: open.edx.org.
 
-Description: E-learning software, collaboration between multiple USA universities.
- 
+Description: E-learning software platform, collaboration between multiple USA universities.
+
 Descripción: Software para e-learning, una colaboración entre múltiples universidades estadounidenses.
 
 Notes: See the "tutor" software for more details.

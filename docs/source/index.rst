@@ -27,10 +27,10 @@ Contents
 
    description
 
-   usage
-
    license
 
    links
 
    author
+
+   software
