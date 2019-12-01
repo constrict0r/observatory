@@ -8,9 +8,16 @@ Título: Tutor.
 
 URL: docs.tutor.overhang.io
 
+Category: e-learning.
+
+Categoría: e-learning.
+
 Description: Tutor is a docker-based Open edX distribution, both for production and local development. The goal of Tutor is to make it easy to deploy, customize, upgrade and scale Open edX.
 
 Descripción: Tutor es una distribución de Open edX basada en Docker, tanto para producción como para desarrollo local. La meta de Tutor es hacer fácil el despliegue, customización, actualización y escalamiento de Open edX.
+
+.. image:: https://gitlab.com/constrict0r/observatory/raw/master/img/tutor.png
+   :alt: tutor
 
 Installation:
 

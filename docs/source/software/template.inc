@@ -1,16 +1,23 @@
-Date:  <xx/xx/xx>.
+Date:  <xx/xx/xxxx>.
 
-Fecha: <xx/xx/xx>.
+Fecha: <xx/xx/xxxx>.
 
 Title:  <Write me>.
 
 Título: <Escríbeme>.
 
-URL: <Paste the software main site here>.
+URL: <Main site goes here, don't use 'https' or colon or sphinx will crash>.
+
+Category: <I.e.: editors, multimedia, security>.
+
+Categoría: <Ej: editores, multimedia, seguridad>.
 
 Description: <Write the software description and/or purpose here>.
 
-Descripción: <Escríbeme>.
+Descripción: <Escriba la descripción y/o próposito del software aquí>.
+
+.. image:: https://gitlab.com/constrict0r/observatory/raw/master/img/title.png
+   :alt: title
 
 Installation:
 

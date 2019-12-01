@@ -42,6 +42,7 @@ Contents
 * `Autor <#autor>`_
 * `Sotware <#Sotware>`_
    * `Open edX <#open-edx>`_
+   * `Pencil2D <#pencil2d>`_
    * `Swagger Editor <#swagger-editor>`_
    * `Tutor <#tutor>`_
 
@@ -110,7 +111,7 @@ Sotware
 Open edX
 ========
 
-Date:  30/11/2019.
+voy aDate:  30/11/2019.
 
 Fecha: 30/11/2019.
 
@@ -119,6 +120,10 @@ Title:  Open edX.
 Título: Open edX.
 
 URL: open.edx.org.
+
+Category: e-learning.
+
+Categoría: e-learning.
 
 Description: E-learning software platform, collaboration between
 multiple USA universities.
@@ -129,6 +134,63 @@ múltiples universidades estadounidenses.
 Notes: See the “tutor” software for more details.
 
 Notas: Vea el software “tutor” para más detalles.
+
+
+Pencil2D
+========
+
+Date:  01/12/2019.
+
+Fecha: 01/12/2019.
+
+Title:  Pencil2D.
+
+Título: Pencil2D.
+
+URL: pencil2d.org.
+
+Category: design.
+
+Categoría: diseño.
+
+Description: 2D drawing software that can be used for web sites
+wireframing.
+
+Descripción: Software de dibujo 2D que puede usarse para crear
+esquemas de
+   sitios web.
+
+Installation:
+
+::
+
+   sudo apt install pencil2d
+
+Instalación:
+
+::
+
+   sudo apt install pencil2d
+
+Pros:
+   * Simple.
+
+   * Easy to install.
+
+   * Easy to use.
+
+Pros:
+   * Simple.
+
+   * Fácil de instalar.
+
+   * Fácil de usar.
+
+Cons:
+   * Does not generate code neither interactions (html, js, css).
+
+Contras:
+   * No genera código ni interacciones (html, js, css).
 
 
 Swagger Editor
@@ -143,6 +205,10 @@ Title:  swagger-editor.
 Título: swagger-editor.
 
 URL: swagger.io/docs/open-source-tools/swagger-editor.
+
+Category: editors.
+
+Categoría: editores.
 
 Description: Openapi web editor.
 
@@ -180,6 +246,10 @@ Título: Tutor.
 
 URL: docs.tutor.overhang.io
 
+Category: e-learning.
+
+Categoría: e-learning.
+
 Description: Tutor is a docker-based Open edX distribution, both for
 production and local development. The goal of Tutor is to make it easy
 to deploy, customize, upgrade and scale Open edX.
@@ -188,6 +258,9 @@ Descripción: Tutor es una distribución de Open edX basada en Docker,
 tanto para producción como para desarrollo local. La meta de Tutor es
 hacer fácil el despliegue, customización, actualización y escalamiento
 de Open edX.
+
+.. image:: https://gitlab.com//constrict0r///observatory//raw/master/img/tutor.png
+   :alt: tutor
 
 Installation:
 

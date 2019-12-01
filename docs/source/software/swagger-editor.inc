@@ -8,6 +8,10 @@ Título: swagger-editor.
 
 URL: swagger.io/docs/open-source-tools/swagger-editor.
 
+Category: editors.
+
+Categoría: editores.
+
 Description: Openapi web editor.
 
 Descripción: Editor web para openapi.

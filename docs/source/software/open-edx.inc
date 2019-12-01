@@ -1,4 +1,4 @@
-Date:  30/11/2019.
+voy aDate:  30/11/2019.
 
 Fecha: 30/11/2019.
 
@@ -7,6 +7,10 @@ Title:  Open edX.
 Título: Open edX.
 
 URL: open.edx.org.
+
+Category: e-learning.
+
+Categoría: e-learning.
 
 Description: E-learning software platform, collaboration between multiple USA universities.
 
