@@ -14,7 +14,7 @@ Descripción: Tutor es una distribución de Open edX basada en Docker, tanto par
 
 Installation:
 
-.. code-block::
+.. code-block:: bash
 
  sudo apt install curl docker docker-compose libyaml-dev -y
  sudo curl -L "https://github.com/overhangio/tutor/releases/download/v3.8.0/tutor-$(uname -s)_$(uname -m)" -o /usr/local/bin/tutor
@@ -30,7 +30,7 @@ Installation:
  
 Instalación:
 
-.. code-block::
+.. code-block:: bash
 
  sudo apt-get install curl docker docker-compose libyaml-dev -y
  sudo curl -L "https://github.com/overhangio/tutor/releases/download/v3.8.0/tutor-$(uname -s)_$(uname -m)" -o /usr/local/bin/tutor
@@ -46,7 +46,7 @@ Instalación:
 
 Commands:
 
- .. code-block::
+ .. code-block:: bash
 
   tutor local quickstart => Construct a new tutor.
   tutor config printfoot => Prints tutor configuration path.
@@ -54,7 +54,7 @@ Commands:
 
 Comandos:
 
- .. code-block::
+ .. code-block:: bash
 
   tutor local quickstart => Construye un nuevo tutor.
   tutor config printfoot => Imprime la ruta a la configuración de tutor.
