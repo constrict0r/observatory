@@ -168,7 +168,6 @@ Installation:
 
 ::
 
-   sudo chmod 4755 chrome-sandbox
    wget https://pencil.evolus.vn/dl/development/pencil_3.1.0.20191202003002_amd64.deb
    sudo dpkg -i ~/Descargas/pencil_3.1.0.20191202003002_amd64.deb
    sudo chmod 4755 chrome-sandbox
@@ -177,7 +176,6 @@ Instalación:
 
 ::
 
-   sudo apt install chrome-sandbox
    wget https://pencil.evolus.vn/dl/development/pencil_3.1.0.20191202003002_amd64.deb
    sudo dpkg -i ~/Descargas/pencil_3.1.0.20191202003002_amd64.deb
    sudo chmod 4755 chrome-sandbox
