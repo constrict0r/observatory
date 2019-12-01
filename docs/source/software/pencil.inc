@@ -47,15 +47,39 @@ Comandos:
 
  pencil => Ejecuta pencil.
 
+Pros:
+ - Easy to use.
+ - Rapid prototiping.
+ - Exports to different formats including html + css + js.
+ - The quality of the html + css + js generated code is decent.
+
+Pros:
+ - Fácil de usar.
+ - Prototipado rápido.
+ - Exporta a diferentes formatos incluido html + css + js.
+ - La calidad de html + css + js es aceptable.
+
 Cons:
- - On Debian Buster crashes on installing with stable release, works fine with
-   nightly build
+ - Hard to install (Buster crashes installing with stable release, works fine
+   with nightly build)
  - On the downloads page says - "the Firefox extension bases on an older
    version of Pencil which is no longer in active development". Gives 404
    error.
+ - Must install the 'Generic Wireframe set of figures/objects' to have a
+   decent set of forms to work with.
+ - By default, when exporting to an html prototype, the background color must
+   always be manually set to #FFF (white).
+ - When creating a new page if you don't put a solid color (as white), you
+   cannot change it later.
 
 Contras:
- - En Debian Buster se cae instalando con la versión oficial, con una versión
-   'nigthly build' funciona bien.
+ - Díficil de instalar (En Buster se cae instalando con versión oficial, la
+   versión 'nigthly build' funciona bien).
  - En la página de descargas dice: "the Firefox extension bases on an older
    version of Pencil which is no longer in active development". Da error 404.
+ - Se debe instalar el 'Conjunto génerico de figuras/objetos para wireframes'
+   para tener un conjunto decente de formas con las cuales trabajar.
+ - De manera predeterminada, cuando se exporta a un prototipo html, el color
+   de fondo siempre debe de ponerse a mano como #FFF (blanco).
+ - Cuando se crea una nueva página, si no pones un color sólido (como blanco),
+   no puedes cambiarlo luego.
