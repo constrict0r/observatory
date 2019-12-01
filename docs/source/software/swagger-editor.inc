@@ -14,7 +14,7 @@ Descripción: Editor web para openapi.
 
 Installation:
 
-.. code-block::
+.. code-block:: bash
 
  sudo apt install -y docker
  docker pull swaggerapi/swagger-editor
@@ -23,7 +23,7 @@ Installation:
 
 Instalación:
 
-.. code-block::
+.. code-block:: bash
 
  sudo apt install -y docker
  docker pull swaggerapi/swagger-editor

@@ -14,28 +14,28 @@ Descripción: <Escríbeme>.
 
 Installation:
 
-.. code-block::
+.. code-block:: bash
 
  <Write all installation steps here>.
  <Another installation step here>.
 
 Instalación:
 
-.. code-block::
+.. code-block:: bash
 
  <Escriba todos los pasos de instalación aquí>.
  <Otro paso de instalación aquí>.
 
 Commands:
 
-.. code-block::
+.. code-block:: bash
 
  <Command 1 => Does something>.
  <Command 2 => Does something else>.
 
 Comandos:
 
-.. code-block::
+.. code-block:: bash
 
  <Comando 1 => Hace algo>.
  <Comando 2 => Hace otra cosa>.
