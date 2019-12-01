@@ -6,16 +6,15 @@ Title:  Pencil2D.
 
 Título: Pencil2D.
 
-URL: pencil2d.org.
+URL: `pencil2d.org <https://www.pencil2d.org>`_.
 
 Category: design.
 
 Categoría: diseño.
 
-Description: 2D drawing software that can be used for web sites wireframing.
+Description: 2D drawing software.
 
-Descripción: Software de dibujo 2D que puede usarse para crear esquemas de
-             sitios web.
+Descripción: Software de dibujo 2D.
 
 .. image:: https://gitlab.com/constrict0r/observatory/raw/master/img/pencil2d.png
    :alt: pencil2d

@@ -6,7 +6,7 @@ Title:  swagger-editor.
 
 Título: swagger-editor.
 
-URL: swagger.io/docs/open-source-tools/swagger-editor.
+URL: `swagger-editor <https://swagger.io/docs/open-source-tools/swagger-editor>`_.
 
 Category: editors.
 

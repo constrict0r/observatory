@@ -6,7 +6,7 @@ Title:  Open edX.
 
 Título: Open edX.
 
-URL: open.edx.org.
+URL: `open.edx.org <https://open.edx.org/>`_.
 
 Category:  e-learning.
 

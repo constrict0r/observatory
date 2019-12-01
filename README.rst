@@ -42,6 +42,7 @@ Contents
 * `Autor <#autor>`_
 * `Sotware <#Sotware>`_
    * `Open edX <#open-edx>`_
+   * `Pencil Project <#pencil-project>`_
    * `Pencil2D <#pencil2d>`_
    * `Swagger Editor <#swagger-editor>`_
    * `Tutor <#tutor>`_
@@ -119,7 +120,7 @@ Title:  Open edX.
 
 Título: Open edX.
 
-URL: open.edx.org.
+URL: `open.edx.org <https://open.edx.org/>`_.
 
 Category:  e-learning.
 
@@ -139,6 +140,75 @@ Notes: See the “tutor” software for more details.
 Notas: Vea el software “tutor” para más detalles.
 
 
+Pencil Project
+==============
+
+Date:  01/12/2019.
+
+Fecha: 01/12/2019.
+
+Title:  Pencil Project.
+
+Título: Pencil Project.
+
+URL: `pencil.evolus.vn <https://pencil.evolus.vn>`_.
+
+Category: design.
+
+Categoría: diseño.
+
+Description: Wireframes design tool.
+
+Descripción: Herramienta de diseño de wireframes.
+
+.. image:: https://gitlab.com//constrict0r///observatory//raw/master/img/pencil.png
+   :alt: pencil
+
+Installation:
+
+::
+
+   wget https://pencil.evolus.vn/dl/development/pencil_3.1.0.20191202003002_amd64.deb
+   sudo dpkg -i ~/Descargas/pencil_3.1.0.20191202003002_amd64.deb
+
+Instalación:
+
+::
+
+   wget https://pencil.evolus.vn/dl/development/pencil_3.1.0.20191202003002_amd64.deb
+   sudo dpkg -i ~/Descargas/pencil_3.1.0.20191202003002_amd64.deb
+
+Commands:
+
+::
+
+   pencil --no-sandbox => Executes pencil without errors.
+
+Comandos:
+
+::
+
+   pencil --no-sandbox => Ejecuta pencil sin errores.
+
+Cons:
+   * On Debian Buster crashes on installing with stable release,
+      works fine with nightly build
+
+   * On the downloads page says - “the Firefox extension bases on an
+      older version of Pencil which is no longer in active
+      development”. Gives 404 error.
+
+Contras:
+   * En Debian Buster se cae instalando con la versión oficial, con
+      una versión ‘nigthly build’ funciona bien.
+
+   * En la página de descargas dice: “the Firefox extension bases on
+      an older version of Pencil which is no longer in active
+      development”. Da error 404.
+
+pencil –no-sandbox
+
+
 Pencil2D
 ========
 
@@ -150,18 +220,15 @@ Title:  Pencil2D.
 
 Título: Pencil2D.
 
-URL: pencil2d.org.
+URL: `pencil2d.org <https://www.pencil2d.org>`_.
 
 Category: design.
 
 Categoría: diseño.
 
-Description: 2D drawing software that can be used for web sites
-wireframing.
+Description: 2D drawing software.
 
-Descripción: Software de dibujo 2D que puede usarse para crear
-esquemas de
-   sitios web.
+Descripción: Software de dibujo 2D.
 
 .. image:: https://gitlab.com//constrict0r///observatory//raw/master/img/pencil2d.png
    :alt: pencil2d
@@ -210,7 +277,8 @@ Title:  swagger-editor.
 
 Título: swagger-editor.
 
-URL: swagger.io/docs/open-source-tools/swagger-editor.
+URL: `swagger-editor
+<https://swagger.io/docs/open-source-tools/swagger-editor>`_.
 
 Category: editors.
 
