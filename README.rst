@@ -168,27 +168,31 @@ Installation:
 
 ::
 
+   sudo chmod 4755 chrome-sandbox
    wget https://pencil.evolus.vn/dl/development/pencil_3.1.0.20191202003002_amd64.deb
    sudo dpkg -i ~/Descargas/pencil_3.1.0.20191202003002_amd64.deb
+   sudo chmod 4755 chrome-sandbox
 
 Instalación:
 
 ::
 
+   sudo apt install chrome-sandbox
    wget https://pencil.evolus.vn/dl/development/pencil_3.1.0.20191202003002_amd64.deb
    sudo dpkg -i ~/Descargas/pencil_3.1.0.20191202003002_amd64.deb
+   sudo chmod 4755 chrome-sandbox
 
 Commands:
 
 ::
 
-   pencil --no-sandbox => Executes pencil without errors.
+   pencil => Executes pencil.
 
 Comandos:
 
 ::
 
-   pencil --no-sandbox => Ejecuta pencil sin errores.
+   pencil => Ejecuta pencil.
 
 Cons:
    * On Debian Buster crashes on installing with stable release,
@@ -205,8 +209,6 @@ Contras:
    * En la página de descargas dice: “the Firefox extension bases on
       an older version of Pencil which is no longer in active
       development”. Da error 404.
-
-pencil –no-sandbox
 
 
 Pencil2D
