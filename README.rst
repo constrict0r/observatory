@@ -171,6 +171,9 @@ Commands:
    docker stop $(docker ps -a -q) => Stop all docker containers.
    docker rm $(docker ps -a -q) => Remove all docker containers.
    docker volume rm volume_id => Remove the volume with id volume_id.
+   docker exec moodle_mariadb_1 mysqldump -u root moodle > 0212201_moodle.sql => Backups moodle database.
+   sudo rsync -a /var/lib/docker/volumes/CONTAINER_mariadb_data ~/Backups/CONTAINER_mariadb_data.bk.$(date +%Y%m%d-%H.%M.%S) => Take snapshot of mariadb data.
+   sudo rsync -a /var/lib/docker/volumes/CONTAINER_moodle_data ~/Backups/CONTAINER_moodle_data.bk.$(date +%Y%m%d-%H.%M.%S) => Take snapshot of moodle data.
 
 Comandos:
 
@@ -183,6 +186,9 @@ Comandos:
    docker stop $(docker ps -a -q) => Detiene todos los contenedores.
    docker rm $(docker ps -a -q) => Borra todos los contenedores.
    docker volume rm volumen_id => Borra el volumen con el id volumen_id.
+   docker exec moodle_mariadb_1 mysqldump -u root moodle > 0212201_moodle.sql => Respalda la base de datos de moodle.
+   sudo rsync -a /var/lib/docker/volumes/CONTAINER_mariadb_data ~/Respaldos/CONTAINER_mariadb_data.bk.$(date +%d%m%Y-%H.%M.%S) => Toma una instantánea de los datos de mariadb.
+   sudo rsync -a /var/lib/docker/volumes/CONTAINER_moodle_data ~/Respaldos/CONTAINER_moodle_data.bk.$(date +%d%m%Y-%H.%M.%S) => Toma una instantánea de los datos de moodle.
 
 Pros:
    * Easy to install.
