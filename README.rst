@@ -41,9 +41,9 @@ Contents
 * `Author <#Author>`_
 * `Autor <#autor>`_
 * `Sotware <#Sotware>`_
+   * `Moodle <#moodle>`_
    * `Open edX <#open-edx>`_
    * `Pencil Project <#pencil-project>`_
-   * `Pencil2D <#pencil2d>`_
    * `Swagger Editor <#swagger-editor>`_
    * `Tutor <#tutor>`_
 
@@ -107,6 +107,98 @@ The travelling vaudeville villain.
 
 Sotware
 *******
+
+
+Moodle
+======
+
+Date:  01/01/2019.
+
+Fecha: 01/01/2019.
+
+Title:  moodle.
+
+Título: moodle.
+
+URL: `moodle.org <https://moodle.org>`_. `bitnami github image
+<https://github.com/bitnami/bitnami-docker-moodle>`_.
+
+Category:  e-learning.
+
+Categoría: e-learning.
+
+Description: Handle courses, teachers and students.
+
+Descripción: Maneja cursos, profesores y estudiantes
+
+.. image:: https://gitlab.com//constrict0r///observatory//raw/master/img/moodle.png
+   :alt: moodle
+
+Installation:
+
+::
+
+   sudo apt install docker docker-compose -y
+   # Check if there are any associated docker volume.
+   docker volume ls
+   # And delete it if necessary.
+   docker volume rm volume_id
+   curl -sSL https://raw.githubusercontent.com/bitnami/bitnami-docker-moodle/master/docker-compose.yml > docker-compose.yml
+   docker-compose up -d
+   visit 127.0.0.1
+
+Instalación:
+
+::
+
+   sudo apt install docker docker-compose -y
+   # Verifique si existe algún volumen asociado con el contenedor.
+   docker volume ls
+   # Y borrélo si es necesario.
+   docker volume rm volume_id
+   curl -sSL https://raw.githubusercontent.com/bitnami/bitnami-docker-moodle/master/docker-compose.yml > docker-compose.yml
+   docker-compose up -d
+   visite 127.0.0.1
+
+Commands:
+
+::
+
+   docker-compose up => Construct the moodle application.
+   docker volume ls => List docker volumens.
+   docker ps -a => List docker containers.
+   docker image ls => List docker images.
+   docker stop $(docker ps -a -q) => Stop all docker containers.
+   docker rm $(docker ps -a -q) => Remove all docker containers.
+   docker volume rm volume_id => Remove the volume with id volume_id.
+
+Comandos:
+
+::
+
+   docker-compose up => Construye la aplicación moodle.
+   docker volume ls => Lista todos los vólumenes docker.
+   docker ps -a => Lista todos los contendores docker.
+   docker image ls => List todas las imágenes docker.
+   docker stop $(docker ps -a -q) => Detiene todos los contenedores.
+   docker rm $(docker ps -a -q) => Borra todos los contenedores.
+   docker volume rm volumen_id => Borra el volumen con el id volumen_id.
+
+Pros:
+   * Easy to install.
+
+   * Light.
+
+Pros:
+   * Fácil de instalar.
+
+   * Ligero.
+
+Cons:
+   * The GUI feels a little messy.
+
+Contras:
+   * Interfaz un poco desordenada.
 
 
 Open edX
@@ -245,63 +337,6 @@ Contras:
 
    * Cuando se crea una nueva página, si no pones un color sólido
       (como blanco), no puedes cambiarlo luego.
-
-
-Pencil2D
-========
-
-Date:  01/12/2019.
-
-Fecha: 01/12/2019.
-
-Title:  Pencil2D.
-
-Título: Pencil2D.
-
-URL: `pencil2d.org <https://www.pencil2d.org>`_.
-
-Category: design.
-
-Categoría: diseño.
-
-Description: 2D drawing software.
-
-Descripción: Software de dibujo 2D.
-
-.. image:: https://gitlab.com//constrict0r///observatory//raw/master/img/pencil2d.png
-   :alt: pencil2d
-
-Installation:
-
-::
-
-   sudo apt install pencil2d
-
-Instalación:
-
-::
-
-   sudo apt install pencil2d
-
-Pros:
-   * Simple.
-
-   * Easy to install.
-
-   * Easy to use.
-
-Pros:
-   * Simple.
-
-   * Fácil de instalar.
-
-   * Fácil de usar.
-
-Cons:
-   * Does not generate code neither interactions (html, js, css).
-
-Contras:
-   * No genera código ni interacciones (html, js, css).
 
 
 Swagger Editor
