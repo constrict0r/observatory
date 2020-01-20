@@ -6,4 +6,6 @@
 
 [[./img/observatory.png]]
 
+The Travelling Vaudeville Villain
+
 [[./img/author.png]]
