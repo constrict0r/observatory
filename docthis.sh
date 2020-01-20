@@ -12,7 +12,8 @@ REQUIREMENTS_PIP='sphinxcontrib-restbuilder
 sphinxcontrib-globalsubs
 sphinx-prompt
 Sphinx-Substitution-Extensions
-sphinx_rtd_theme'
+sphinx_rtd_theme
+'
 
 # conf.py file contents.
 CONFIGURATION_CONTENTS='# Configuration for Sphinx documentation builder.
@@ -45,34 +46,66 @@ html_theme = "sphinx_rtd_theme"
 
 master_doc = "index"
 
-img_url = "|IMG_URL_GENERATED_VALUE|"
+img_base_url = "https://raw.githubusercontent.com/"
+img_url = img_base_url + author + "/" + project + "/master/img/"
 
-ci_url_base = "https://travis-ci.org/"
+author_img = ".. image:: " + img_url + "/author.png\\n   :alt: author"
+author_slogan = "The travelling vaudeville villain."
 
-ci_url = ci_url_base + author + "/" + project
+github_base_url = "https://github.com/"
+github_url = github_base_url + author + "/" + project
+github_link = "`Github <" + github_url + ">`_."
+
+gitlab_base_url = "https://gitlab.com/"
+gitlab_url = gitlab_base_url + author + "/" + project
+gitlab_badge = gitlab_url + "/badges/master/pipeline.svg\\n   :alt: pipeline"
+gitlab_ci_url = gitlab_url + "/pipelines"
+gitlab_ci_link = "`Gitlab CI <" + gitlab_ci_url + ">`_."
+gitlab_link = "`Gitlab <" + gitlab_url + ">`_."
+
+travis_base_url = "https://travis-ci.org/"
+travis_url = travis_base_url + author + "/" + project
+travis_badge = ".. image:: " + travis_url + ".svg\\n   :alt: travis"
+travis_ci_url = travis_url
+travis_link = "`Travis CI <" + travis_url + ">`_."
+
+readthedocs_url = "https://" + project + ".readthedocs.io"
+readthedocs_badge = "/projects/" + project + "/badge\\n   :alt: readthedocs"
+readthedocs_link = "`readthedocs <" + readthedocs_url + ">`_."
+
+gh_cover_base_url = "https://coveralls.io/repos/github/"
+gh_cover_url = gh_cover_base_url + author + "/" + project + "/badge.svg"
+
+gl_cover_base_url = "https://gitlab.com/" + author + "/" + project
+gl_cover_url = gl_cover_base_url + "/badges/master/coverage.svg"
 
 global_substitutions = {
-    "AUTHOR_IMG": ".. image:: " + img_url +
-    "/author.png\\n   :alt: author",
-    "AUTHOR_SLOGAN": "The travelling vaudeville villain.",
-    "CI_BADGE": ".. image:: " + ci_url + ".svg\\n   :alt: travis",
-    "CI_LINK":  "`Travis CI <" + ci_url + ">`_.",
-    "REPO_LINK":  "`Github repository <https://github.com/"
-    + author + "/" + project + ">`_.",
+    "AUTHOR_IMG": author_img,
+    "AUTHOR_SLOGAN": author_slogan,
+    "COVERAGE_GITHUB_BADGE":  ".. image:: " + gh_cover_url
+    + "\\n   :alt: coverage",
+    "COVERAGE_GITLAB_BADGE":  ".. image:: " + gl_cover_url
+    + "\\n   :alt: coverage_gitlab",
+    "GITHUB_LINK": github_link,
+    "GITLAB_BADGE": ".. image:: " + gitlab_badge,
+    "GITLAB_CI_LINK": gitlab_ci_link,
+    "GITLAB_LINK": gitlab_link,
     "PROJECT": project,
-    "READTHEDOCS_BADGE": ".. image:: https://readthedocs.org/projects/"
-    + project + "/badge\\n   :alt: readthedocs",
-    "READTHEDOCS_LINK": "`readthedocs <https://" + project +
-    ".readthedocs.io/en/latest/>`_."
+    "READTHEDOCS_BADGE": ".. image:: https://rtfd.io" + readthedocs_badge,
+    "READTHEDOCS_LINK": readthedocs_link,
+    "TRAVIS_BADGE": travis_badge,
+    "TRAVIS_LINK": travis_link,
 }
 
 substitutions = [
     ("|AUTHOR|", author),
     ("|PROJECT|", project)
-]'
+]
+'
 
 # .readthedocs.yml file contents.
-READTHEDOCS_CONTENTS="version: 2
+READTHEDOCS_CONTENTS="---
+version: 2
 
 sphinx:
   configuration: docs/source/conf.py
@@ -80,21 +113,35 @@ sphinx:
 python:
   version: 3.7
   install:
-    - requirements: docs/requirements.txt"
+    - requirements: docs/requirements.txt
+
+submodules:
+  include: all
+"
 
 # index.rst file contents.
 INDEX_CONTENTS="|PROJECT_GENERATED_NAME|
 =============================================================================
 
-|CI_BADGE|
+|GITLAB_BADGE|
+
+|TRAVIS_BADGE|
 
 |READTHEDOCS_BADGE|
+
+|COVERAGE_GITHUB_BADGE|
+
+|COVERAGE_GITLAB_BADGE|
 
 My project short description.
 
 Full documentation on |READTHEDOCS_LINK|.
 
-Source code on |REPO_LINK|.
+Source code on:
+
+|GITHUB_LINK|
+
+|GITLAB_LINK|
 
 Contents
 =============================================================================
@@ -167,9 +214,7 @@ COMPATIBILITY_CONTENTS='Compatibility
 
 \- Debian buster.
 
-\- Debian stretch.
-
-\- Raspbian stretch.
+\- Raspbian buster.
 
 \- Ubuntu xenial.'
 
@@ -183,9 +228,13 @@ MIT. See the LICENSE file for more details.'
 LINKS_CONTENTS='Links
 -----------------------------------------------------------------------------
 
-|REPO_LINK|
+|GITHUB_LINK|
 
-|CI_LINK|'
+|GITLAB_LINK|
+
+|GITLAB_CI_LINK|
+
+|TRAVIS_LINK|'
 
 # author.rst file contents.
 AUTHOR_CONTENTS='Author
@@ -201,7 +250,7 @@ AUTHOR_CONTENTS='Author
 #
 #  - Period.
 #  - Slash.
-#  - Double dots.
+#  - Colon.
 #
 # @arg $1 string Text to scape.
 #
@@ -212,33 +261,21 @@ AUTHOR_CONTENTS='Author
 function escape() {
     [[ -z $1 ]] && echo '' && return 0
     local escaped=$(sanitize "$1")
-    # Escape.
+    # Escape period.
     escaped="${escaped//\./\\.}"
+    # Escape slash.
     escaped="${escaped//\//\\/}"
+    # Escape colon.
     escaped="${escaped//\:/\\:}"
     echo "$escaped"
     return 0
 }
 
-# @description Escape URLs.
-#
-# @arg $1 string URL to scape.
-#
-# @exitcode 0 If successful.
-# @exitcode 1 On failure.
-#
-# @stdout The escaped URL plus ending slash if needed.
-function escape_url() {
-    [[ -z $1 ]] && echo '' && return 0
-    local escaped=$(escape "$1")
-    ! [[ "${escaped: -1}" == '/' ]] && escaped="$escaped\/"
-    echo "$escaped"
-    return 0
-}
-
-# @description Setup sphinx and generate html and rst documentation.
+# @description Setup sphinx and generate html and rst documentation,
+# generates a single README-single file that can be used on github or gitlab.
 #
 # @arg $1 string Optional project path. Default to current path.
+# @arg $2 string Optional CI service to use for generating a coverage badge.
 #
 # @exitcode 0 If successful.
 # @exitcode 1 On failure.
@@ -248,6 +285,14 @@ function generate() {
 
     local project_path=$(pwd)
     [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
+
+    # Valid values: 'github' or 'gitlab'.
+    local coverage_ci='github'
+    if ! [[ -z $2 ]]; then
+        if [[ "$2" == 'gitlhub' ]] || [[ "$2" == 'gitlab' ]]; then
+            coverage_ci="$2"
+        fi
+    fi
 
     local author=$(get_author $project_path)
 
@@ -302,7 +347,6 @@ function generate() {
             sed -i -E "s/\|AUTHOR_GENERATED_NAME\|/$author/g" $project_path/docs/source/*.*
             sed -i -E "s/\|PROJECT_GENERATED_NAME\|/$project/g" $project_path/docs/source/*.*
             sed -i -E "s/\|YEAR_GENERATED_VALUE\|/$project_year/g" $project_path/docs/source/*.*
-            sed -i -E "s/\|IMG_URL_GENERATED_VALUE\|/$(escape_url $img_url)/g" $project_path/docs/source/*.*
         fi
 
         # Install requirements if not already installed.
@@ -310,6 +354,7 @@ function generate() {
         sphinx_requirements="${sphinx_requirements,,}"
         sphinx_requirements="${sphinx_requirements//-/_}"
         local current_line=''
+
         while read LINE
         do
             current_line=$LINE
@@ -322,7 +367,7 @@ function generate() {
 
     # Generate documentation.
     python3 -m sphinx -b html $project_path/docs/source/ $project_path/docs/build/html
-    generate_rst $project_path
+    generate_rst $project_path $coverage_ci
 
     return 0
 }
@@ -338,6 +383,7 @@ function generate() {
 #   - The index.rst file contains the :toctree: directive.
 #
 # @arg $1 string Optional project path. Default to current path.
+# @arg $2 string Optional CI service to use for generating a coverage badge.
 #
 # @exitcode 0 If successful.
 # @exitcode 1 On failure.
@@ -347,6 +393,14 @@ function generate_rst() {
 
     local project_path=$(pwd)
     [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
+
+    # Valid values: 'gitlab' or 'travis'.
+    local coverage_ci='travis'
+    if ! [[ -z $2 ]]; then
+        if [[ "$2" == 'gitlab' ]] || [[ "$2" == 'travis' ]]; then
+            coverage_ci="$2"
+        fi
+    fi
 
     local project=$(get_project $project_path)
 
@@ -365,7 +419,7 @@ function generate_rst() {
 
     # Recreate the file to append content.
     if [[ -f $project_path/docs/build/rst/index.rst ]]; then
-       readthedocs_to_rst $project_path/docs/build/rst/index.rst $project_path
+       readthedocs_to_rst $project_path/docs/build/rst/index.rst $project_path $coverage_ci
        cat $project_path/docs/build/rst/index.rst > $project_path/README-single.rst
        printf '\n' >> $project_path/README-single.rst
     fi
@@ -379,7 +433,7 @@ function generate_rst() {
         if [[ $items_found == true ]] && ! [[ -z "$LINE"  ]]; then
 
             # Apply conversion from readthedocs to common rst.
-            readthedocs_to_rst $project_path/docs/build/rst/${LINE}.rst $project_path
+            readthedocs_to_rst $project_path/docs/build/rst/${LINE}.rst $project_path $coverage_ci
 
             if [[ -f $project_path/docs/build/rst/${LINE}.rst ]]; then
                 cat $project_path/docs/build/rst/${LINE}.rst >> $project_path/README-single.rst
@@ -413,7 +467,126 @@ function get_author() {
 
 }
 
+# @description Get the continuous integration repository URL for Gitlab.
+#
+# If the  URL cannot be found, then a default URL is returned.
+#
+# This function assumes:
+#   - The project has a file structure as created by generate().
+#
+# @arg $1 string Optional project path. Defaults to current path.
+#
+# @exitcode 0 If successful.
+# @exitcode 1 On failure.
+#
+# @stdout echo Gitlab continuous integration URL.
+function get_gitlab_ci_url() {
+
+    local project_path=$(pwd)
+    [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
+
+    local gitlab_ci_url=$(get_variable 'gitlab_ci_url' $project_path)
+
+    if ! [[ -z $gitlab_ci_url ]]; then
+        if [[ "$gitlab_ci_url" =~ 'gitlab_url' ]]; then
+            local gitlab_url=$(get_variable 'gitlab_url' $project_path)
+            if ! [[ -z $gitlab_url ]]; then
+                gitlab_ci_url="${gitlab_ci_url//gitlab_url/$gitlab_url}"
+            fi
+        fi
+
+        if [[ "$gitlab_ci_url" =~ 'gitlab_base_url' ]]; then
+             local gitlab_base_url=$(get_variable 'gitlab_base_url' $project_path)
+             if ! [[ -z $gitlab_base_url ]]; then
+                 gitlab_ci_url="${gitlab_ci_url//gitlab_base_url/$gitlab_base_url}"
+             fi
+        fi
+
+        gitlab_ci_url=$(escape $gitlab_ci_url)
+        echo "$gitlab_ci_url"
+        return 0
+    fi
+
+    local author=$(get_author $project_path)
+    local project=$(get_project $project_path)
+    echo "https://gitlab.com/$author/$project/pipelines"
+    return 0
+
+}
+
+# @description Get the coverage badge URL for Github (coveralls).
+#
+# @arg $1 string Optional project path. Defaults to current path.
+#
+# @exitcode 0 If successful.
+# @exitcode 1 On failure.
+#
+# @stdout echo Github coverage (coveralls) badge URL.
+function get_gh_cover_url() {
+
+    local project_path=$(pwd)
+    [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
+
+    local gh_cover_url=$(get_variable 'gh_cover_url' $project_path)
+
+    if ! [[ -z $gh_cover_url ]]; then
+        if [[ "$gh_cover_url" =~ 'gh_cover_base_url' ]]; then
+            local gh_cover_base_url=$(get_variable 'gh_cover_base_url' $project_path)
+            if ! [[ -z $gh_cover_base_url ]]; then
+                gh_cover_url="${gh_cover_url//gh_cover_base_url/$gh_cover_base_url}"
+            fi
+        fi
+
+        gh_cover_url=$(escape $gh_cover_url)
+        echo "$gh_cover_url"
+        return 0
+    fi
+
+    local author=$(get_author $project_path)
+    local project=$(get_project $project_path)
+    echo "https://coveralls.io/repos/github/$author/$project/badge.svg"
+    return 0
+
+}
+
+# @description Get the coverage badge URL for Gitlab.
+#
+# @arg $1 string Optional project path. Defaults to current path.
+#
+# @exitcode 0 If successful.
+# @exitcode 1 On failure.
+#
+# @stdout echo Gitlab coverage badge URL.
+function get_gl_cover_url() {
+
+    local project_path=$(pwd)
+    [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
+
+    local gl_cover_url=$(get_variable 'gl_cover_url' $project_path)
+
+    if ! [[ -z $gl_cover_url ]]; then
+        if [[ "$gl_cover_url" =~ 'gl_cover_base_url' ]]; then
+            local gl_cover_base_url=$(get_variable 'gl_cover_base_url' $project_path)
+            if ! [[ -z $gl_cover_base_url ]]; then
+                gl_cover_url="${gl_cover_url//gl_cover_base_url/$gl_cover_base_url}"
+            fi
+        fi
+
+        gl_cover_url=$(escape $gl_cover_url)
+        echo "$gl_cover_url"
+        return 0
+    fi
+
+    local author=$(get_author $project_path)
+    local project=$(get_project $project_path)
+    echo "https://gitlab.com/$author/$project/badges/master/coverage.svg"
+    return 0
+
+}
+
 # @description Get the images repository URL.
+#
+# If the  URL cannot be found, then a default Github URL is returned.
 #
 # This function assumes:
 #   - The project has a file structure as created by generate().
@@ -430,141 +603,14 @@ function get_img_url() {
     [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
     local img_url=$(get_variable 'img_url' $project_path)
     if ! [[ -z "$img_url" ]]; then
-        escape_url $img_url
+        img_url=$(escape $img_url)
+        echo "$img_url"
         return 0
     fi
     local author=$(get_author $project_path)
     local project=$(get_project $project_path)
     echo "https://raw.githubusercontent.com/$author/$project/master/img/"
     return 0
-
-}
-
-# @description Get the continuous integration repository URL.
-#
-# This function assumes:
-#   - The project has a file structure as created by generate().
-#
-# @arg $1 string Optional project path. Default to current path.
-#
-# @exitcode 0 If successful.
-# @exitcode 1 On failure.
-#
-# @stdout echo continuous integration URL.
-function get_ci_url() {
-
-    local project_path=$(pwd)
-    [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
-    local ci_url=$(get_variable 'ci_url' $project_path)
-    if ! [[ -z "$ci_url" ]]; then 
-        escape_url $ci_url
-        return 0
-    fi
-    local author=$(get_author $project_path)
-    local project=$(get_project $project_path)
-    echo "https://travis-ci.org/$author/$project/"
-    return 0
-
-}
-
-# @description Get a images or continuous integration URL.
-#
-# This function assumes:
-#   - The project has a file structure as created by generate().
-#
-# @arg $1 string Required variable name.
-# @arg $2 string Optional project path. Default to current path.
-#
-# @exitcode 0 If successful.
-# @exitcode 1 On failure.
-#
-# @stdout echo URL.
-function get_variable() {
-
-    [[ -z $1 ]] && return 1
-    local variable_name=$1
-
-    local project_path=$(pwd)
-    [[ -d $2 ]] && project_path="$( cd "$2" ; pwd -P )"
-
-    local variable_value=$(get_variable_from_conf $variable_name $project_path)
-
-    if ! [[ -z $variable_value ]]; then
-        if [[ "$variable_value" =~ 'author' ]]; then
-            if ! [[ -z $author ]]; then
-                variable_value="${variable_value//author/$author}"
-            fi
-        fi
-
-        if [[ "$variable_value" =~ 'project' ]]; then
-            if ! [[ -z $project ]]; then
-                variable_value="${variable_value//project/$project}"
-            fi
-        fi
-
-        if [[ "$variable_value" =~ 'img_url' ]] &&
-               ! [[ "$variable_value" =~ 'img_url_base' ]] &&
-               ! [[ "$variable_value" =~ 'img_url_part' ]]; then
-            local img_url=$(get_variable 'img_url' $project_path)
-            if ! [[ -z $img_url_base ]]; then
-                variable_value="${variable_value//img_url/$img_url}"
-            fi
-        fi
-
-        if [[ "$variable_value" =~ 'img_url_base' ]]; then
-            local img_url_base=$(get_variable 'img_url_base' $project_path)
-            if ! [[ -z $img_url_base ]]; then
-                variable_value="${variable_value//img_url_base/$img_url_base}"
-            fi
-        fi
-
-        if [[ "$variable_value" =~ 'img_url_part' ]]; then
-            local img_url_part=$(get_variable 'img_url_part' $project_path)
-            if ! [[ -z $img_url_part ]]; then
-                variable_value="${variable_value//img_url_part/$img_url_part}"
-            fi
-        fi
-
-        if [[ "$variable_value" =~ 'ci_url_base' ]]; then
-            local ci_url_base=$(get_variable 'ci_url_base' $project_path)
-            if ! [[ -z $ci_url_base ]]; then
-                variable_value="${variable_value//ci_url_base/$ci_url_base}"
-            fi
-        fi
-
-        # Remove '+'.
-        variable_value="${variable_value//+/\/}"
-        # Remove quotes.
-        variable_value="${variable_value//\"/}"
-        variable_value="${variable_value//\'/}"
-        variable_value=$(sanitize "$variable_value")
-        echo $variable_value && return 0
-    fi
-
-    echo ''
-    return 0
-
-}
-
-# @description Get the project's name.
-#
-# @arg $1 string Optional project path. Default to current path.
-#
-# @exitcode 0 If successful.
-# @exitcode 1 On failure.
-#
-# @stdout echo project's name.
-function get_project() {
-
-    local project_path=$(pwd)
-    [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
-
-    local project=$(get_variable 'project' $project_path)
-    if [ $? -eq 0 ]; then
-        ! [[ -z $project ]] && echo $project && return 0
-    fi
-
-    basename $project_path && return 0
 
 }
 
@@ -593,7 +639,111 @@ function get_parameters() {
     return 0
 }
 
-# @description Get a variable from the configuration file.
+# @description Get the project's name.
+#
+# @arg $1 string Optional project path. Default to current path.
+#
+# @exitcode 0 If successful.
+# @exitcode 1 On failure.
+#
+# @stdout echo project's name.
+function get_project() {
+
+    local project_path=$(pwd)
+    [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
+
+    local project=$(get_variable 'project' $project_path)
+    if [ $? -eq 0 ]; then
+        ! [[ -z $project ]] && echo $project && return 0
+    fi
+
+    basename $project_path && return 0
+
+}
+
+# @description Get the continuous integration repository URL for Travis.
+#
+# If the  URL cannot be found, then a default URL is returned.
+#
+# This function assumes:
+#   - The project has a file structure as created by generate().
+#
+# @arg $1 string Optional project path. Defaults to current path.
+#
+# @exitcode 0 If successful.
+# @exitcode 1 On failure.
+#
+# @stdout echo continuous integration URL.
+function get_travis_ci_url() {
+
+    local project_path=$(pwd)
+    [[ -d $1 ]] && project_path="$( cd "$1" ; pwd -P )"
+
+    local travis_ci_url=$(get_variable 'travis_ci_url' $project_path)
+
+    if ! [[ -z $travis_ci_url ]]; then
+        if [[ "$travis_ci_url" =~ 'travis_url' ]]; then
+            local travis_url=$(get_variable 'travis_url' $project_path)
+            if ! [[ -z $travis_url ]]; then
+                travis_ci_url="${travis_ci_url//travis_url/$travis_url}"
+            fi
+        fi
+
+        if [[ "$travis_ci_url" =~ 'travis_base_url' ]]; then
+             local travis_base_url=$(get_variable 'travis_base_url' $project_path)
+             if ! [[ -z $travis_base_url ]]; then
+                 travis_ci_url="${travis_ci_url//travis_base_url/$travis_base_url}"
+             fi
+        fi
+
+        travis_ci_url=$(escape $travis_ci_url)
+        echo "$travis_ci_url"
+        return 0
+    fi
+
+    local author=$(get_author $project_path)
+    local project=$(get_project $project_path)
+    echo "https://travis-ci.org/$author/$project"
+    return 0
+
+}
+
+# @description Get a images or continuous integration URL.
+#
+# This function assumes:
+#   - The project has a file structure as created by generate().
+#
+# @arg $1 string Required variable name.
+# @arg $2 string Optional project path. Default to current path.
+#
+# @exitcode 0 If successful.
+# @exitcode 1 On failure.
+#
+# @stdout echo variable value.
+function get_variable() {
+
+    [[ -z $1 ]] && return 1
+    local variable_name=$1
+
+    local project_path=$(pwd)
+    [[ -d $2 ]] && project_path="$( cd "$2" ; pwd -P )"
+
+    local variable_value=$(get_variable_from_conf "$variable_name" $project_path)
+    variable_value=$(replace_tokens "$variable_value")
+
+    # Remove '+'.
+    variable_value="${variable_value//+/\/}"
+    # Remove quotes.
+    variable_value="${variable_value//\"/}"
+    variable_value="${variable_value//\'/}"
+    variable_value=$(sanitize "$variable_value")
+
+    echo $variable_value
+    return 0
+
+}
+
+# @description Get a raw variable from the configuration file.
 #
 # @arg $1 string Required variable name.
 # @arg $2 string Optional project path. Default to current path.
@@ -613,8 +763,25 @@ function get_variable_from_conf() {
 
     local variable_value=''
 
-    if [[ "$variable_name" == 'img_url' ]] ||
-           [[ "$variable_name" == 'ci_url' ]]; then 
+    if  [[ "$variable_name" == 'img_base_url' ]] ||
+            [[ "$variable_name" == 'img_url' ]] ||
+            [[ "$variable_name" == 'github_base_url' ]] ||
+            [[ "$variable_name" == 'github_url' ]] ||
+            [[ "$variable_name" == 'github_link' ]] ||
+            [[ "$variable_name" == 'gitlab_base_url' ]] ||
+            [[ "$variable_name" == 'gitlab_url' ]] ||
+            [[ "$variable_name" == 'gitlab_badge' ]] ||
+            [[ "$variable_name" == 'gitlab_ci_url' ]] ||
+            [[ "$variable_name" == 'gitlab_ci_link' ]] ||
+            [[ "$variable_name" == 'gitlab_link' ]] ||
+            [[ "$variable_name" == 'travis_base_url' ]] ||
+            [[ "$variable_name" == 'travis_url' ]] ||
+            [[ "$variable_name" == 'travis_badge' ]] ||
+            [[ "$variable_name" == 'travis_ci_url' ]] ||
+            [[ "$variable_name" == 'readthedocs_url' ]] ||
+            [[ "$variable_name" == 'readthedocs_badge' ]] ||
+            [[ "$variable_name" == 'readthedocs_link' ]]; then
+
         variable_value=$(get_variable_line "$variable_name" "$project_path")
 
     else
@@ -626,11 +793,10 @@ function get_variable_from_conf() {
     variable_value="${variable_value//\"/}"
     variable_value="${variable_value//\'/}"
     variable_value="${variable_value//\'/}"
-    echo $variable_value
-    return 0
+    echo $variable_value && return 0
 }
 
-# @description Get a variable line from the configuration file.
+# @description Get a matching line from the configuration file.
 #
 # @arg $1 string Required variable name.
 # @arg $2 string Optional project path. Default to current path.
@@ -694,6 +860,46 @@ function main() {
     return 0
 }
 
+# @description Given an input string, replaces the tokens:
+#
+# - author
+# - project
+# - img_base_url
+# - github_base_url
+# - gitlab_base_url
+# - travis_base_url
+#
+# @arg $1 string Input text where to apply the substitutions.
+#
+# @exitcode 0 If successful.
+# @exitcode 1 On failure.
+#
+# @stdout echo replaced string.
+function replace_tokens() {
+
+    [[ -z $1 ]] && return 1
+    local variable_value="$1"
+
+    local author=$(get_variable_from_conf 'author' $project_path)
+    local project=$(get_variable_from_conf 'project' $project_path)
+
+    if [[ "$variable_value" =~ ((.*)_base_url).*$ ]]; then
+
+        variable_name="${BASH_REMATCH[1]}"
+        local variable_base_url=$(get_variable_from_conf "$variable_name" $project_path)
+
+        if ! [[ -z $variable_base_url ]]; then
+            variable_value="${variable_value//$variable_name/$variable_base_url}"
+        fi
+    fi
+
+    variable_value="${variable_value//author/$author}"
+    variable_value="${variable_value//project/$project}"
+
+    echo "$variable_value"
+    return 0
+}
+
 # @description Replace reference from readthedocs format to standard rst.
 #
 # See `this link <https://github.com/constrict0r/images>`_ for an example
@@ -719,30 +925,34 @@ function readthedocs_to_rst() {
 
     local img_url=$(get_img_url $project_path)
 
-    local ci_url=$(get_ci_url $project_path)
+    local gitlab_ci_url=$(get_gitlab_ci_url $project_path)
+    # Replace '/pipelines' by 'badges/master/pipeline'.
+    gitlab_ci_url="${gitlab_ci_url//pipelines/badges\/master\/pipeline}"
+
+    local travis_ci_url=$(get_travis_ci_url $project_path)
+
+    local gh_cover_url=$(get_gh_cover_url $project_path)
+
+    local gl_cover_url=$(get_gl_cover_url $project_path)
 
     # Convert all `<text.rst>`_ references to `<#text>`.
     sed -i -E "s/\<([[:alpha:]]*[[:punct:]]*)+\.rst\>//g" $1
     sed -i -E 's/([[:alpha:]]+)\ <>/\1\ <#\1>/g' $1
 
     # Replace travis-ci status badge image.
-    sed -i -E "s@\[image\:\ travis\]\[image\]@\.\.\ image\:\:\ $ci_url\.svg\\n   :alt: travis@g" $1
+    sed -i -E "s@\[image\:\ travis\]\[image\]@\.\.\ image\:\:\ $travis_ci_url\.svg\\n   :alt: travis@g" $1
 
     # Replace gitlab-ci status badge image.
-   sed -i -E "s@\[image\:\ pipeline\]\[image\]@\.\.\ image\:\:\ https\:\/\/gitlab\.com\/$author/$project\/badges\/master\/pipeline\.svg\\n   :alt: pipeline@g" $1
+   sed -i -E "s@\[image\:\ pipeline\]\[image\]@\.\.\ image\:\:\ $gitlab_ci_url\.svg\\n   :alt: pipeline@g" $1
 
     # Replace readthedocs status badge image.
     sed -i -E "s@\[image\:\ readthedocs\]\[image\]@\.\.\ image\:\:\ https\:\/\/readthedocs\.org\/projects\/$project\/badge\\n   :alt: readthedocs@g" $1
 
     # Replace coverage status badge image on github using coveralls.
-    if [[ "$ci_url" =~ 'github' ]]; then
-        sed -i -E "s@\[image\:\ coverage\]\[image\]@\.\.\ image\:\:\ https\:\/\/coveralls\.io\/repos\/github\/$author\/$project\/badge\.svg\\n   :alt: coverage@g" $1
-
+    sed -i -E "s@\[image\:\ coverage\]\[image\]@\.\.\ image\:\:\ https\:\/\/coveralls\.io\/repos\/github\/$author\/$project\/badge\.svg\\n   :alt: coverage@g" $1
+            
     # Replace coverage status badge image on gitlab.
-    else
-        sed -i -E "s@\[image\:\ coverage\]\[image\]@\.\.\ image\:\:\ https\:\/\/gitlab\.com\/$author\/$project\/badges\/master\/coverage\.svg\\n   :alt: coverage@g" $1
-
-    fi
+    sed -i -E "s@\[image\:\ coverage_gitlab\]\[image\]@\.\.\ image\:\:\ https\:\/\/gitlab\.com\/$author\/$project\/badges\/master\/coverage\.svg\\n   :alt: coverage_gitlab@g" $1
 
     # Replace rest of images.
     sed -i -E "s@\[image\:\ (.*)+\]\[image\]@\.\.\ image\:\:\ $img_url\1\.png\\n   :alt: \1@g" $1
@@ -754,6 +964,7 @@ function readthedocs_to_rst() {
 #
 # The applied operations are:
 #
+#  - Remove unnecesary slashes.
 #  - Trim.
 #
 # @arg $1 string Text to sanitize.
@@ -765,9 +976,24 @@ function readthedocs_to_rst() {
 function sanitize() {
     [[ -z $1 ]] && echo '' && return 0
     local sanitized="$1"
+
     # Trim.
     sanitized="${sanitized## }"
     sanitized="${sanitized%% }"
+
+    # Remove double and triple slashes.
+    # Extract the protocol URL part (http:// or https://).
+    protocol="$(echo $sanitized | grep :// | sed -e's,^\(.*://\).*,\1,g')"
+
+    # Remove the protocol.
+    sanitized="${sanitized/${protocol}/}"
+
+    # Remove unnecesary slashes.
+    sanitized=$(echo "$sanitized" | tr -s /)
+
+    # Readd the protocol
+    sanitized=${protocol}${sanitized}
+
     echo "$sanitized"
     return 0
 }
