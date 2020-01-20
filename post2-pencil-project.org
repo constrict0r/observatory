@@ -4,7 +4,7 @@
 
 | Category    | Design                 |
 | Description | Wireframes desing tool |
-| Links       | [[pencil.evolus.vn][Official Site]]          |
+| Links       | [[https://pencil.evolus.vn][Official Site]]          |
 
 #+CAPTION: Pencil Project.
 #+NAME:   fig:pencil-project-gui.
