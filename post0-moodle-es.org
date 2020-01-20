@@ -4,11 +4,9 @@
 
 * Moodle-ES
 
-| Fecha       | [2019-12-01 dom]                           |
-| Título      | Moodle                                     |
-| Enlaces     | [[https://moodle.org][Sitio Oficial]], [[https://github.com/bitnami/bitnami-docker-moodle][Imagen de Docker de Bitnami]] |
 | Categoría   | E-learning                                 |
 | Descripción | Maneja cursos, profesores y estudiantes    |
+| Enlaces     | [[https://moodle.org][Sitio Oficial]], [[https://github.com/bitnami/bitnami-docker-moodle][Imagen de Docker de Bitnami]] |
 
 #+CAPTION: Moodle.
 #+NAME:   fig:GUI principal de Moodle.

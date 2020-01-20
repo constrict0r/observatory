@@ -1,0 +1,17 @@
+#+title: Open edX
+#+author: constrict0r
+#+date: [2019-11-30 sáb]
+
+* Open edX
+
+| Category    | E-learning                                                                               |
+| Description | E-learning software platform, colaboración entre múltiples universidades estadounidenses |
+| Links       | [[open.edx.org][Official Site]]                                                          |
+
+#+CAPTION: Open edX.
+#+NAME:   fig:GUI principal de Open edX.
+[[./img/open-edx.png]]
+
+** Notas
+
+   - Vea el software **tutor** para más detalles.
