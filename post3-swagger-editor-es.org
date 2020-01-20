@@ -2,9 +2,9 @@
 #+author: constrict0r
 #+date: [2019-11-30 sáb]
 
-| Category    | Editores                |
-| Description | Editor web para openapi |
-| Links       | [[https://swagger.io/docs/open-source-tools/swagger-editor][Sitio Oficial]]           |
+| Categoría   | Editores                |
+| Descripción | Editor web para openapi |
+| Enlaces     | [[https://swagger.io/docs/open-source-tools/swagger-editor][Sitio Oficial]]           |
 
 #+CAPTION: Swagger Editor.
 #+NAME:   fig:swagger-editor-gui.
