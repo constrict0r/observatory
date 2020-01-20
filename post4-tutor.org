@@ -1,0 +1,49 @@
+#+title: Tutor
+#+author: constrict0r
+#+date: [2019-11-30 sáb]
+
+| Category    | E-learning                                                                                                                                                                       |
+| Description | Tutor is a docker-based Open edX distribution, both for production and local development. The goal of Tutor is to make it easy to deploy, customize, upgrade and scale Open edX. |
+| Links       | [[https://docs.tutor.overhang.io][Official Site]]                                                                                                                                                                    |
+
+#+CAPTION: Tutor.
+#+NAME:   fig:tutor-gui.
+[[./img/tutor.png]]
+
+* Installation
+
+  #+BEGIN_SRC bash
+  sudo apt install curl docker docker-compose libyaml-dev -y
+  sudo curl -L "https://github.com/overhangio/tutor/releases/download/v3.8.0/tutor-$(uname -s)_$(uname -m)" -o /usr/local/bin/tutor
+  sudo chmod 0755 /usr/local/bin/tutor
+  tutor local quickstart
+  Your website domain name for students (LMS) [www.myopenedx.com] - myopenedx.com
+  Your website domain name for teachers (CMS) [studio.myopenedx.com] - teachers.myopenedx.com
+  Your platform name/title [My Open edX] - My Open edX.
+  Your public contact email address [contact@myopenedx.com] - contact@myopenedx.com
+  The default language code for the platform [en] - es-mx
+  Activate SSL/TLS certificates for HTTPS access? Important note, this will NOT work in a development environment. [y/N] > - n
+  tutor local createuser --staff --superuser username contact@myopenedx.com => Create admin user.
+  #+END_SRC
+
+* Commands
+
+  #+BEGIN_SRC bash
+  tutor local quickstart # Construct a new tutor.
+  tutor config printfoot # Prints tutor configuration path.
+  cat "$(tutor config printroot)/config.yml" # Prints tutor configuration.
+  #+END_SRC
+  
+* Pros
+
+  - It’s a really cool software.
+    
+  - Easy to install (via docker).
+    
+  - Great if you’re gonna manage courses.
+
+    
+* Cons
+
+  - Too big for small projects: it includes mysql, mongodb, rabbitmq, nginx,
+    elastix-search, smtp, django and reactjs.
