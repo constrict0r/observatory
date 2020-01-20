@@ -4,7 +4,7 @@
 
 | Category    | E-learning                                                                     |
 | Description | E-learning software platform, collaboration between multiple USA universities. |
-| Links       | [[open.edx.org][Official Site]]                                                |
+| Links       | [[https://open.edx.org][Official Site]]                                                |
 
 #+CAPTION: Open edX.
 #+NAME:   fig:open-edx-gui.
