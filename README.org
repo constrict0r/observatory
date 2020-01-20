@@ -1,0 +1,9 @@
+#+title: Observatory
+#+author: constrict0r
+#+date: <2020-01-20 lun>
+
+[[https://constrict0r.gitlab.io/observatory][The Madvillain Software Observatory]]
+
+[[./img/observatory.png]]
+
+[[./img/author.png]]
