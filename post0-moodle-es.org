@@ -1,8 +1,6 @@
-#+title: Moodle-ES
+#+title: Moodle ES
 #+author: constrict0r
 #+date: [2019-12-01 dom]
-
-* Moodle-ES
 
 | Categoría   | E-learning                                 |
 | Descripción | Maneja cursos, profesores y estudiantes    |
