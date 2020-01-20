@@ -2,9 +2,9 @@
 #+author: constrict0r
 #+date: [2019-11-30 sáb]
 
-| Category    | E-learning                                                                                                                                                                                                       |
-| Description | Tutor es una distribución de Open edX basada en Docker, tanto para producción como para desarrollo local. La meta de Tutor es hacer fácil el despliegue, customización, actualización y escalamiento de Open edX |
-| Links       | [[https://docs.tutor.overhang.io][Official Site]]                                                                                                                                                                                                    |
+| Categoría   | E-learning                                                                                                                                                                                                       |
+| Descripción | Tutor es una distribución de Open edX basada en Docker, tanto para producción como para desarrollo local. La meta de Tutor es hacer fácil el despliegue, customización, actualización y escalamiento de Open edX |
+| Enlaces     | [[https://docs.tutor.overhang.io][Sitio Oficial]]                                                                                                                                                                                                    |
 
 #+CAPTION: Tutor.
 #+NAME:   fig:tutor-gui.
