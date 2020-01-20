@@ -18,7 +18,7 @@
   sudo chmod 4755 chrome-sandbox
   #+END_SRC
 
-* Commands
+* Comandos
 
   #+BEGIN_SRC bash
   pencil # Ejecuta pencil.   
@@ -34,7 +34,7 @@
 
   - La calidad de html + css + js es aceptable.
 
-* Cons
+* Contras
 
   - Díficil de instalar (En Buster se cae instalando con versión
     oficial, la versión *nigthly build* funciona bien).
