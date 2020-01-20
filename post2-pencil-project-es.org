@@ -2,9 +2,9 @@
 #+author: constrict0r
 #+date: [2019-11-30 sáb]
 
-| Category    | Diseño                               |
-| Description | Herramienta de diseño de wireframes. |
-| Links       | [[https://pencil.evolus.vn][Sitio Oficial]]                        |
+| Categoría   | Diseño                               |
+| Descripción | Herramienta de diseño de wireframes. |
+| Enlaces     | [[https://pencil.evolus.vn][Sitio Oficial]]                        |
 
 #+CAPTION: Pencil Project.
 #+NAME:   fig:pencil-project-gui.
