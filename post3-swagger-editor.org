@@ -1,0 +1,20 @@
+#+title: Swagger Editor
+#+author: constrict0r
+#+date: [2019-11-30 sáb]
+
+| Category    | Editors            |
+| Description | Openapi web editor |
+| Links       | [[https://swagger.io/docs/open-source-tools/swagger-editor][Official Site]]      |
+
+#+CAPTION: Swagger Editor.
+#+NAME:   fig:swagger-editor-gui.
+[[./img/swagger-editor.png]]
+
+* Installation
+
+  #+BEGIN_SRC bash
+  sudo apt install -y docker
+  docker pull swaggerapi/swagger-editor
+  docker run -p 80:8080 swaggerapi/swagger-editor
+  # Open the URL http://127.0.0.1 on a web browser.
+  #+END_SRC
