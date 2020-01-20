@@ -1,8 +1,6 @@
-#+title: Open edX
+#+title: Open edX ES
 #+author: constrict0r
 #+date: [2019-11-30 sáb]
-
-* Open edX
 
 | Category    | E-learning                                                                               |
 | Description | E-learning software platform, colaboración entre múltiples universidades estadounidenses |

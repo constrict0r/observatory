@@ -2,8 +2,6 @@
 #+author: constrict0r
 #+date: [2019-12-01 dom]
 
-* Moodle
-
 | Category    | E-learning                             |
 | Description | Handle courses, teachers and students. |
 | Links       | [[https://moodle.org][Official Site]], [[https://github.com/bitnami/bitnami-docker-moodle][Bitnami Docker Image]]    |
