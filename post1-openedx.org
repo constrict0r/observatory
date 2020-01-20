@@ -1,4 +1,4 @@
-#+title: Open-edX
+#+title: Open edX
 #+author: constrict0r
 #+date: [2019-11-30 sáb]
 
