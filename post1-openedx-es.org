@@ -7,9 +7,9 @@
 | Links       | [[open.edx.org][Official Site]]                                                          |
 
 #+CAPTION: Open edX.
-#+NAME:   fig:GUI principal de Open edX.
+#+NAME:   fig:open-edx-gui.
 [[./img/open-edx.png]]
 
-** Notas
+* Notas
 
-   - Vea el software **tutor** para más detalles.
+  - Vea el software **tutor** para más detalles.

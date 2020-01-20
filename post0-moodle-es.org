@@ -7,49 +7,49 @@
 | Enlaces     | [[https://moodle.org][Sitio Oficial]], [[https://github.com/bitnami/bitnami-docker-moodle][Imagen de Docker de Bitnami]] |
 
 #+CAPTION: Moodle.
-#+NAME:   fig:GUI principal de Moodle.
+#+NAME:   fig:moodle-gui.
 [[./img/moodle.png]]
 
-** Instalación
+* Instalación
 
-   #+BEGIN_SRC bash
-   sudo apt install docker docker-compose -y
+  #+BEGIN_SRC bash
+  sudo apt install docker docker-compose -y
    
-   # Verifique si existe algún volumen asociado con el contenedor.
-   docker volume ls
+  # Verifique si existe algún volumen asociado con el contenedor.
+  docker volume ls
    
-   # Y borrélo si es necesario.
-   docker volume rm volume_id
+  # Y borrélo si es necesario.
+  docker volume rm volume_id
 
-   # Obtenga la imagen de Docker de Bitnami y ejecútela.
-   curl -sSL https://raw.githubusercontent.com/bitnami/bitnami-docker-moodle/master/docker-compose.yml > docker-compose.yml
-   docker-compose up -d
+  # Obtenga la imagen de Docker de Bitnami y ejecútela.
+  curl -sSL https://raw.githubusercontent.com/bitnami/bitnami-docker-moodle/master/docker-compose.yml > docker-compose.yml
+  docker-compose up -d
    
-   # Abra el URL https://127.0.0.1 en un navegador web.
-   #+END_SRC
+  # Abra el URL https://127.0.0.1 en un navegador web.
+  #+END_SRC
 
 
-** Comandos
+* Comandos
 
-   #+BEGIN_SRC bash
-   docker-compose up # Construye la aplicación moodle.
-   docker volume ls # Lista todos los vólumenes docker.
-   docker ps -a # Lista todos los contendores docker.
-   docker image ls # List todas las imágenes docker.
-   docker stop $(docker ps -a -q) # Detiene todos los contenedores.
-   docker rm $(docker ps -a -q) # Borra todos los contenedores.
-   docker volume rm volumen_id # Borra el volumen con el id volumen_id.
-   docker exec moodle_mariadb_1 mysqldump -u root moodle > 0212201_moodle.sql # Respalda la base de datos de moodle.
-   sudo rsync -a /var/lib/docker/volumes/CONTAINER_mariadb_data ~/Respaldos/CONTAINER_mariadb_data.bk.$(date +%d%m%Y-%H.%M.%S) # Toma una instantánea de los datos de mariadb.
-   sudo rsync -a /var/lib/docker/volumes/CONTAINER_moodle_data ~/Respaldos/CONTAINER_moodle_data.bk.$(date +%d%m%Y-%H.%M.%S) # Toma una instantánea de los datos de moodle.
-   #+END_SRC
+  #+BEGIN_SRC bash
+  docker-compose up # Construye la aplicación moodle.
+  docker volume ls # Lista todos los vólumenes docker.
+  docker ps -a # Lista todos los contendores docker.
+  docker image ls # List todas las imágenes docker.
+  docker stop $(docker ps -a -q) # Detiene todos los contenedores.
+  docker rm $(docker ps -a -q) # Borra todos los contenedores.
+  docker volume rm volumen_id # Borra el volumen con el id volumen_id.
+  docker exec moodle_mariadb_1 mysqldump -u root moodle > 0212201_moodle.sql # Respalda la base de datos de moodle.
+  sudo rsync -a /var/lib/docker/volumes/CONTAINER_mariadb_data ~/Respaldos/CONTAINER_mariadb_data.bk.$(date +%d%m%Y-%H.%M.%S) # Toma una instantánea de los datos de mariadb.
+  sudo rsync -a /var/lib/docker/volumes/CONTAINER_moodle_data ~/Respaldos/CONTAINER_moodle_data.bk.$(date +%d%m%Y-%H.%M.%S) # Toma una instantánea de los datos de moodle.
+  #+END_SRC
 
-** Pros
+* Pros
 
-   - Fácil de instalar.
+  - Fácil de instalar.
      
-   - Ligero.
+  - Ligero.
 
-** Contras
+* Contras
 
-   - Interfaz un poco desordenada.
+  - Interfaz un poco desordenada.

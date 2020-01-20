@@ -1,0 +1,54 @@
+#+title: Pencil-Project
+#+author: constrict0r
+#+date: [2019-11-30 sáb]
+
+| Category    | Design                 |
+| Description | Wireframes desing tool |
+| Links       | [[pencil.evolus.vn][Official Site]]          |
+
+#+CAPTION: Pencil Project.
+#+NAME:   fig:pencil-project-gui.
+[[./img/pencil-project.png]]
+
+* Installation
+
+  #+BEGIN_SRC bash
+  wget https://pencil.evolus.vn/dl/development/pencil_3.1.0.20191202003002_amd64.deb
+  sudo dpkg -i ~/Downloads/pencil_3.1.0.20191202003002_amd64.deb
+  sudo chmod 4755 chrome-sandbox
+  #+END_SRC
+
+* Commands
+
+  #+BEGIN_SRC bash
+  pencil # Executes pencil.   
+  #+END_SRC
+
+* Pros
+
+  - Easy to use.
+
+  - Rapid prototiping.
+
+  - Exports to different formats including html + css + js.
+
+  - The quality of the html + css + js generated code is decent.
+
+
+* Cons
+
+  - Hard to install (Buster crashes installing with stable release, works
+    fine with nightly build)
+
+  - On the downloads page says - *the Firefox extension bases on an
+    older version of Pencil which is no longer in active
+    development*. Gives 404 error.
+
+  - Must install the *Generic Wireframe set of figures/objects* to
+    have a decent set of forms to work with.
+
+  - By default, when exporting to an html prototype, the background
+    color must always be manually set to #FFF (white).
+
+  - When creating a new page if you don’t put a solid color (as
+    white), you cannot change it later.
