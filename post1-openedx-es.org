@@ -3,7 +3,7 @@
 #+date: [2019-11-30 sáb]
 
 | Categoría   | E-learning                                                                               |
-| Descripción | E-learning software platform, colaboración entre múltiples universidades estadounidenses |
+| Descripción | Plataforma de Software E-learning, colaboración entre múltiples universidades estadounidenses |
 | Enlaces     | [[https://open.edx.org][Sitio Oficial]]                                                          |
 
 #+CAPTION: Open edX.
