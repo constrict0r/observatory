@@ -1,0 +1,31 @@
+#+title: Curl es
+#+author: constrict0r
+#+date: [2020-03-12 jue]
+
+| Categoría   | Sistema                                                      |
+| Descripción | curl un manejador de archivos muy usado para archivos online |
+| Enlaces     | [[https://curl.haxx.se][Official Site]]                                                |
+
+* Instalación
+
+  #+BEGIN_SRC bash
+  sudo apt install curl
+  #+END_SRC
+
+* Comandos
+
+  #+BEGIN_SRC bash
+  curl https://bootstrap.pypa.io/get-pip.py | sudo python3 -
+  #+END_SRC
+  
+* Pros
+
+  - Es una librería y una herramienta de línea de comandos.
+    
+  - Fácil de instalar y usar.
+    
+  - Grandioso para usar con tuberías.
+    
+* Cons
+
+  - No siempre está instalado.

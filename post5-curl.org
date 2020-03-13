@@ -1,0 +1,32 @@
+#+title: Curl
+#+author: constrict0r
+#+date: [2020-03-12 jue]
+
+| Category    | System                                                                                                                                                                      |
+| Description | curl is a file manager most used for online files. |
+| Links       | [[https://curl.haxx.se][Official Site]]                                                                                                                                                                    |
+
+* Installation
+
+  #+BEGIN_SRC bash
+  sudo apt install curl
+  #+END_SRC
+
+* Commands
+
+  #+BEGIN_SRC bash
+  curl https://bootstrap.pypa.io/get-pip.py | sudo python3 -
+  #+END_SRC
+  
+* Pros
+
+  - It’s a library and a command line tool.
+    
+  - Easy to install and use.
+    
+  - Great for using with pipes.
+
+    
+* Cons
+
+  - Is not always installed.
